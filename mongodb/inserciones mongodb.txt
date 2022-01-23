@@ -1,0 +1,175 @@
+use alquilerVehiculos
+
+db.vehiculo.insertMany([
+	{marca: 'Ford', modelo: 'Ranger', numero_puertas: '4', capacidad_maletero: 80, placa: 'MAN01234', color: 'ROJO', ocupado: 'false'}, 
+	{marca: 'KIA', modelo:'Sportage', numero_puertas: '4', capacidad_maletero: 60, placa: 'MCN0125', color: 'BLANCO', ocupado: 'false'},
+	{marca: 'KIA', modelo:'Picanto', numero_puertas: '4', capacidad_maletero: 90, placa: 'MDN0126', color: 'NEGRO', ocupado: 'false'},
+	{marca: 'KIA', modelo:'Rio', numero_puertas: '4', capacidad_maletero: 90, placa: 'MDN1126', color: 'AZUL', ocupado: 'false},
+	{marca: 'CHEVROLET', modelo:'BEAT', numero_puertas: '4', capacidad_maletero: '50', placa: 'MEN0143', color: 'ROJO', ocupado: 'false'},
+	{marca: 'CHEVROLET', modelo:'D.MAX', numero_puertas: '4', capacidad_maletero: '90', placa: 'MTN0124', color: 'BLANCO', ocupado: 'false'},
+	{marca: 'CHEVROLET', modelo:'SPARK', numero_puertas: '4', capacidad_maletero: '80', placa: 'MNN1123', color: 'NEGRO', ocupado: 'false'}
+	]);
+
+db.cliente.insertMany([
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'BBVA', nombres: 'JUSTO IGNACIO', apellidos: 'ALMAGRO PEREIRA', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'A+', telefono: '0917582368', direccion: '5 DE AGOSTO', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'BBVA', nombres: 'RAUL JHON', apellidos: 'BONILLA CASAS', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'AB+', telefono: '0917582368', direccion: '15 DE SEPTIEMBRE', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'BBVA', nombres: 'JHONNY ROBERT', apellidos: 'LOBATO MARQUEZ', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'O+', telefono: '0917582368', direccion: '15 DE ABRIL', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'MASTERCARD', nombres: 'PEDRO JON', apellidos: 'VACA LEMA', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'A+', telefono: '0917582368', direccion: 'SAN AGUSTIN', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'MASTERCARD', nombres: 'ESTEVEN HUMBERTO', apellidos: 'ARCE LUCAS', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'O+', telefono: '0917582368', direccion: 'SAN PEDRO', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'MASTERCARD', nombres: 'RAFAEL MARIO', apellidos: 'FRANCO GILER', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'AB+', telefono: '0917582368', direccion: 'CUBA', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'MASTERCARD', nombres: 'GUILLERMO NELSON', apellidos: 'TOLEDO ARJONA', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'O-', telefono: '0917582368', direccion: 'URBIRRIOS', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'DINNERS', nombres: 'KEVIN JAIME', apellidos: 'PONCE CHICA', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'O+', telefono: '0917582368', direccion: 'SAN MATEO', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'DINNERS', nombres: 'VICTOR JOSE', apellidos: 'VELASQUEZ CASTAÑEDA', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'O-', telefono: '0917582368', direccion: 'MIRAFLORES', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'DINNERS', nombres: 'IGOR ANTON', apellidos: 'CHACON PEREZ', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'AB-', telefono: '0917582368', direccion: 'LAS VEGAS', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'VISA', nombres: 'GERMAN MARCELINO', apellidos: 'DURAN MARIN', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'B+', telefono: '0917582368', direccion: 'LA PROAÑO', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'MASCULINO', auspiciante_crediticio: 'VISA', nombres: 'MARGY NAYELI', apellidos: 'TORO FERNANDEZ', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'AB-', telefono: '0917582368', direccion: 'LA REVANCHA', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'BBVA', nombres: 'LUCIA ANTONIA', apellidos: 'LUQUE PORRAS', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'B+', telefono: '0917582368', direccion: 'TARQUI', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'BBVA', nombres: 'JUSTA EMILIA', apellidos: 'VILLEGAS FERRERO', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'O-', telefono: '0917582368', direccion: 'SANTA MARTHA', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'BBVA', nombres: 'PETRA SOFIA', apellidos: 'MEJIA ARROYO', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'B+', telefono: '0917582368', direccion: 'ELOY ALFARO', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'MASTERCARD', nombres: 'ISIS BRIGGITTE', apellidos: 'REINA ALVAREZ', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'B-', telefono: '0917582368', direccion: 'SAN PABLO', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'MASTERCARD', nombres: 'GABRIELA LETTY', apellidos: 'ERIQUE MACIAS', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'A-', telefono: '0917582368', direccion: 'COSTA AZUL', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'MASTERCARD', nombres: 'ISABELLA BLANCA', apellidos: 'MENDOZA MERO', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'B-', telefono: '0917582368', direccion: 'LA PRADERA', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'DINNERS', nombres: 'ESTELA MARIA', apellidos: 'PAZ NAVARRETE', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'A-', telefono: '0917582368', direccion: 'LAS CUMBRES', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'DINNERS', nombres: 'PAULA LUZ', apellidos: 'BECERRA CALERO', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'A+', telefono: '0917582368', direccion: 'LA AURORA', correo: 'EXAMPLE@EXAMPLE.COM'},
+	{ciudad: 'MANTA', genero: 'FEMENINO',  auspiciante_crediticio: 'DINNERS', nombres: 'NATALIA FELIPA', apellidos: 'VERA RODRIGUEZ', cedula: '1355325243', fecha_nacimiento: '10-12-2000', tipo_sangre: 'AB+', telefono: '0917582368', direccion: 'LOS ESTEROS', correo: 'EXAMPLE@EXAMPLE.COM'}
+]);
+
+
+db.empleado.insertMany([
+	{titulo: 'Ingeniero Mecanico', tipo: 'Operativo', genero: 'MASCULINO', cedula: '1352644985', nombres: 'GREGORY FERNANDO', apellidos: 'SALAZAR MENDOZA', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Ingeniero en Sistemas', tipo: 'Administrativo', genero: 'MASCULINO', cedula: '1352644985', nombres: 'ROBERT WILFRIDO', apellidos: 'MOREIRA CENTENO', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Bachiller', tipo: 'Operativo', genero: 'FEMENINO', cedula: '1352644985', nombres: 'JANE ZOE', apellidos: 'MACIAS BARREIRO', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Auditoria y Contabilidad', tipo: 'Administrativo', genero: 'FEMENINO', cedula: '1352644985', nombres: 'PATRICIA SUSAN', apellidos: 'CEVALLOS LOPEZ', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Ingeniero Industrial', tipo: 'Operativo', genero: 'MASCULINO', cedula: '1352644985', nombres: 'RICHARD FRANCISCO', apellidos: 'BURGOS ZAMBRANO', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Trabajador Social', tipo: 'Administrativo', genero: 'FEMENINO', cedula: '1352644985', nombres: 'ANA XIMENA', apellidos: 'MACIAS CEDEÑO', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Ingeniero Comercial', tipo: 'Operativo', genero: 'FEMENINO', cedula: '1352644985', nombres: 'XIOMARA ANAHI', apellidos: 'AVILA ROCIO', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Mercadotecnia', tipo: 'Administrativo', genero: 'MASCULINO', cedula: '1352644985', nombres: 'MARIANO BYRON', apellidos: 'RIOS SANTOS', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Administrador de empresas', tipo: 'Administrativo', genero: 'MASCULINO', cedula: '1352644985', nombres: 'ANIBAL ARMANDO', apellidos: 'SEVILLA QUINTANA', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'},
+	{titulo: 'Abogado', tipo: 'Administrativo', genero: 'MASCULINO', cedula: '1352644985', nombres: 'JOAN FELIPE', apellidos: 'MERA BRAVO', fecha_nacimiento: '1970-01-16', fecha_contratacion: '2008-10-12', telefono: '0987412658'}
+]);
+
+
+//Antes de hacer las siguientes debes ingresar las anteriores y conocer su _id
+//inserciones en documento mantenimiento
+db.matenimiento.insertMany([
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 100, observaciones:'Cambio de aceite',    lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV.113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 50, observaciones: 'cambio de filtro',    lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 70, observaciones: 'Cambio de aceite',    lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 100, observaciones:'Cambio de aceite',    lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 50, observaciones: 'Cambio de aceite',    lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 70, observaciones: 'cambio de filtro',    lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 100, observaciones:'Cambio de aceite',    lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERO'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 80, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERO'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'CONAUTO ', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 100, observaciones:'reparaciones varias', lugar: 'CONAUTO ', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 50, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 100, observaciones:'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 80, observaciones: 'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 70, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 60, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 100, observaciones:'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 80, observaciones: 'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 50, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 70, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'AL TERMIANR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 60, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 100, observaciones:'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 80, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 60, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 50, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 100, observaciones:'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 50, observaciones: 'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 70, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'AL TERMINAR LA AV. 4 DE NOVIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 80, observaciones: 'reparaciones varias', lugar: 'CONAUTO', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b610"), fecha: '2021-11-16', costo: 60, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b612"), fecha: '2021-11-16', costo: 100, observaciones:'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60c"), fecha: '2021-11-16', costo: 80, observaciones: 'reparaciones varias', lugar: 'PITS CARS', ciudad: 'MANTA', direccion: 'BARRIO 15 DE SEPTIEMBRE'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60e"), fecha: '2021-11-16', costo: 90, observaciones: 'reparaciones varias', lugar: 'TALLER ROSERO', ciudad: 'MANTA', direccion: 'AV. 113 Y AV. ARTURO VERA'}
+]);
+
+db.revisiones.insertMany([
+)	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), fecha: '2021/01/03', abservaciones: 'SIN NOVEDAD'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), fecha: '2020/06/03', abservaciones: 'SIN NOVEDAD'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), fecha: '2021/02/03', abservaciones: 'SIN NOVEDAD'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), fecha: '2021/03/03', abservaciones: 'SIN NOVEDAD'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), fecha: '2020/08/03', abservaciones: 'SIN NOVEDAD'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), fecha: '2020/07/03', abservaciones: 'SIN NOVEDAD'},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), fecha: '2021/04/03', abservaciones: 'SIN NOVEDAD'}
+]);
+
+
+db.alquiler.insertMany([
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5f7"), dias_alquiler: 3, precio_diario: 48, alquiler_terminado: 'true', fecha_inicio:  '2020-01-15', fecha_fin: '2020-01-18', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5f8"), dias_alquiler: 4, precio_diario: 48, alquiler_terminado: 'true', fecha_inicio:  '2020-02-15', fecha_fin: '2020-02-19', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5f9"), dias_alquiler: 5, precio_diario: 48, alquiler_terminado: 'true', fecha_inicio:  '2020-02-20', fecha_fin: '2020-02-25', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fa"), dias_alquiler: 1, precio_diario: 25, alquiler_terminado: 'true', fecha_inicio:  '2020-02-27', fecha_fin: '2020-02-28', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fb"), dias_alquiler: 2, precio_diario: 25, alquiler_terminado: 'true', fecha_inicio:  '2020-03-10', fecha_fin: '2020-03-12', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fc"), dias_alquiler: 3, precio_diario: 25, alquiler_terminado: 'true', fecha_inicio:  '2020-03-15', fecha_fin: '2020-03-18', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60f"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fd"), dias_alquiler: 4, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-03-20', fecha_fin: '2020-03-24', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60f"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fe"), dias_alquiler: 5, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-04-05', fecha_fin: '2020-04-10', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60f"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5ff"), dias_alquiler: 5, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-04-12', fecha_fin: '2020-04-17', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60f"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b600"), dias_alquiler: 4, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-04-13', fecha_fin: '2020-04-17', penalizacion: 5, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60f"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b601"), dias_alquiler: 3, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-05-15', fecha_fin: '2020-05-18', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60f"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b602"), dias_alquiler: 2, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-05-16', fecha_fin: '2020-05-18', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b611"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b603"), dias_alquiler: 1, precio_diario: 60, alquiler_terminado: 'true', fecha_inicio:  '2020-05-25', fecha_fin: '2020-05-26', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b611"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b604"), dias_alquiler: 1, precio_diario: 60, alquiler_terminado: 'true', fecha_inicio:  '2020-06-03', fecha_fin: '2020-06-04', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b611"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b605"), dias_alquiler: 2, precio_diario: 60, alquiler_terminado: 'true', fecha_inicio:  '2020-06-05', fecha_fin: '2020-06-07', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b611"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b606"), dias_alquiler: 3, precio_diario: 25, alquiler_terminado: 'true', fecha_inicio:  '2020-06-08', fecha_fin: '2020-06-11', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b611"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b607"), dias_alquiler: 4, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-06-12', fecha_fin: '2020-06-16', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b613"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b608"), dias_alquiler: 5, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-07-15', fecha_fin: '2020-07-20', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b613"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b609"), dias_alquiler: 5, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-07-16', fecha_fin: '2020-07-21', penalizacion: 5, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b613"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b60a"), dias_alquiler: 4, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-07-17', fecha_fin: '2020-07-21', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b613"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b60a"), dias_alquiler: 3, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-08-15', fecha_fin: '2020-08-18', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b613"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b609"), dias_alquiler: 2, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-08-17', fecha_fin: '2020-08-19', penalizacion: 5, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b614"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b608"), dias_alquiler: 1, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-08-25', fecha_fin: '2020-08-26', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b614"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b607"), dias_alquiler: 1, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-08-30', fecha_fin: '2020-08-31', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b614"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b606"), dias_alquiler: 2, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-09-05', fecha_fin: '2020-09-07', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b614"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b605"), dias_alquiler: 3, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-09-15', fecha_fin: '2020-09-18', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b614"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b604"), dias_alquiler: 4, precio_diario: 40, alquiler_terminado: 'true', fecha_inicio:  '2020-09-25', fecha_fin: '2020-09-29', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b614"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b603"), dias_alquiler: 5, precio_diario: 60, alquiler_terminado: 'true', fecha_inicio:  '2020-10-11', fecha_fin: '2020-10-16', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f0"), id_empleado: ObjectId("61e4ae1df6460dcf4073b615"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b602"), dias_alquiler: 5, precio_diario: 60, alquiler_terminado: 'true', fecha_inicio:  '2020-10-25', fecha_fin: '2020-10-30', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f1"), id_empleado: ObjectId("61e4ae1df6460dcf4073b615"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b601"), dias_alquiler: 4, precio_diario: 60, alquiler_terminado: 'true', fecha_inicio:  '2020-11-05', fecha_fin: '2020-11-09', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f2"), id_empleado: ObjectId("61e4ae1df6460dcf4073b615"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b600"), dias_alquiler: 3, precio_diario: 25, alquiler_terminado: 'true', fecha_inicio:  '2020-11-15', fecha_fin: '2020-11-18', penalizacion: 5, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f3"), id_empleado: ObjectId("61e4ae1df6460dcf4073b615"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5ff"), dias_alquiler: 2, precio_diario: 25, alquiler_terminado: 'true', fecha_inicio:  '2020-11-19', fecha_fin: '2020-11-21', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f4"), id_empleado: ObjectId("61e4ae1df6460dcf4073b615"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fe"), dias_alquiler: 1, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-12-02', fecha_fin: '2020-12-03', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f5"), id_empleado: ObjectId("61e4ae1df6460dcf4073b615"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fd"), dias_alquiler: 1, precio_diario: 33, alquiler_terminado: 'true', fecha_inicio:  '2020-12-04', fecha_fin: '2020-12-05', penalizacion: 0, observaciones: '', seguro: 'CONTRA ACCIDENTES', total: 0},
+	{id_vehiculo: ObjectId("61e4a966f6460dcf4073b5f6"), id_empleado: ObjectId("61e4ae1df6460dcf4073b60d"), id_cliente: ObjectId("61e4aa8bf6460dcf4073b5fc"), dias_alquiler: 2, precio_diario: 48, alquiler_terminado: 'true', fecha_inicio:  '2020-12-15', fecha_fin: '2020-12-17', penalizacion: 0, observaciones: '', seguro: 'CONTRA ROBOS', total: 0},
+]);
+
+
+//actualizar el precio total
+db.alquiler.update(
+  {},
+  [{ $set: { total: { $multiply: [ "$precio_diario", "$dias_alquiler" ] } } }],
+  { multi: true }
+);
+
+db.alquiler.aggregate(
+	[
+            {
+				$match:  { 
+				penalizacion: { $gt: 0 }, 
+				alquiler_terminado: "true",
+				id_cliente: ObjectId("61e4aa8bf6460dcf4073b609")
+				}
+			},
+            {
+				$group: {
+                _id: "$id_cliente",
+                fallas: { $count : {}  }
+            	}
+			}
+	]
+)
+db.cliente.update({apellidos: ' LOBATO MARQUEZ'}, [
+	{$set: {apellidos: 'LOBATO MARQUEZ'}}
+])
+
+//ejemplo para ver la referencia
+db.alquiler.aggregate([{ $lookup: { from: "vehiculo", localField: "id_vehiculo", foreignField: "_id", as: "vehiculo" } }]).pretty();
+  

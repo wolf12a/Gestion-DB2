@@ -1,0 +1,42 @@
+const {Router} = require('express')
+const Funciones = require('../controllers/alquiler.controllers');
+const Mg = require('../controllers/alquiler.mg.controllers')
+
+const router = Router();
+
+router.post('/cliente', Funciones.cliente)
+router.post('/empleado', Funciones.empleado)
+router.post('/alquiler', Funciones.alquiler)
+router.post('/mg-alquiler', Mg.newAlquiler)
+router.post('/vehiculo', Funciones.vehiculo)
+router.post('/revision', Funciones.revision)
+router.post('/ausp_cred', Funciones.crediticio)
+router.post('/titulo', Funciones.titulo)
+router.post('/tipo', Funciones.tipoEmp)
+router.post('/genero', Funciones.genero)
+router.post('/ciudad', Funciones.ciudad)
+router.post('/marca', Funciones.marca)
+router.post('/modelo', Funciones.modelo)
+router.post('/seguro', Funciones.seguro)
+router.post('/auspiciante', Funciones.auspiciante)
+router.post('/mantenimiento', Funciones.mantenimiento)
+
+router.get('/cliente', Funciones.getCliente)
+router.get('/empleado', Funciones.getEmpleado)
+router.get('/vehiculo', Funciones.getVehiculo)
+router.get('/mg-cliente', Mg.getClientes)
+router.get('/mg-empleado', Mg.getEmpleados)
+router.get('/mg-vehiculo', Mg.getVehiculos)
+router.get('/marca', Funciones.getMarca)
+router.get('/modelo', Funciones.getModelo)
+router.get('/alquiler', Funciones.getAlquiler)
+router.get('/revision', Funciones.getRevision)
+router.get('/ausp_cred', Funciones.getAusp)
+router.get('/genero', Funciones.getGenero)
+router.get('/ciudad', Funciones.getCiudad)
+router.get('/seguro', Funciones.getSeguro)
+router.get('/lugar', Funciones.getLugar)
+router.get('/titulo', Funciones.getTitulo)
+router.get('/empleado_tipo', Funciones.getTipo)
+
+module.exports = router
