@@ -2,7 +2,7 @@
 Proyecto segundo parcial
 
 Clonar el proyecto de github :
-git clone https://github.com/wolf12a/Gestion-DB2.git 
+git clone https://github.com/borisloor06/Gestion-DB2.git 
 
 Dentro del proyecto iniciar una consola, moverse a la carpeta BackEnd  y los comandos “npm install” y “npm run dev”
 
