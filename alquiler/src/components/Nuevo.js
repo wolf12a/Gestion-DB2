@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Input from './Input';
+import { Header } from './Header';
 
 function Nuevo({nombre}) {
     const [dato, setDato] = useState({})
@@ -126,18 +127,21 @@ function Nuevo({nombre}) {
     }
 
     return (
-        <div className='main'>
-            <form onSubmit={handleSubmit} id={nombre}>
-            <h2>{"Agregar " + nombre.charAt(0).toUpperCase() + nombre.slice(1)}</h2>
-            <Input
-                    tipo="text"
-                    label={nombre.charAt(0).toUpperCase() + nombre.slice(1)}
-                    nombre="nombre"
-                    handle={handleChange}
-            />
-            <button className="btn cancel"  onClick={cancel}>Cancelar</button>
-            <button className="btn formulario__btn" type="submit">Enviar</button>
-            </form>
+        <div className='center'>
+            <Header></Header>
+            <div className='main'>
+                <form onSubmit={handleSubmit} id={nombre}>
+                <h2>{"Agregar " + nombre.charAt(0).toUpperCase() + nombre.slice(1)}</h2>
+                <Input
+                        tipo="text"
+                        label={nombre.charAt(0).toUpperCase() + nombre.slice(1)}
+                        nombre="nombre"
+                        handle={handleChange}
+                />
+                <button className="btn cancel"  onClick={cancel}>Cancelar</button>
+                <button className="btn formulario__btn" type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     )
 }

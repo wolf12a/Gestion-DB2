@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Input from './Input';
 import Select from './Select';
+import { Header } from './Header';
 
 function MgAlquiler() {
     const navigate = useNavigate();
     const [cliente, setCliente] = useState([])
     const [empleados, setEmpleados] = useState([])
     const [vehiculo, setVehiculo] = useState([])
-    const [finalizado, setFinalizado] = useState([{value: true, name: "Si"},
+    const [finalizado] = useState([{value: true, name: "Si"},
     {value: false, name: "No"}])
     const [alquiler, setAlquiler] = useState({terminado: false})
 
@@ -66,100 +67,103 @@ function MgAlquiler() {
         loadVehiculos()
     },[])
     return (
-        <div className='main'>
-            <h2>Formulario Alquiler</h2>
-            <form onSubmit={onSubmit}>
-            <Select
-                datos={cliente}
-                nombre={"cliente"}
-                label={"Cliente"}
-                handle={handleChange}
-            />
-            <Select
-                datos={empleados}
-                nombre={"empleado"}
-                label={"Empleado"}
-                handle={handleChange}
-            />
-            <Select
-                datos={vehiculo}
-                nombre={"vehiculo"}
-                label={"Vehiculo"}
-                handle={handleChange}
-            />
+        <div className='center'>
+            <Header></Header>
+            <div className='main'>
+                <h2>Formulario Alquiler NOSQL</h2>
+                <form onSubmit={onSubmit}>
+                <Select
+                    datos={cliente}
+                    nombre={"cliente"}
+                    label={"Cliente"}
+                    handle={handleChange}
+                />
+                <Select
+                    datos={empleados}
+                    nombre={"empleado"}
+                    label={"Empleado"}
+                    handle={handleChange}
+                />
+                <Select
+                    datos={vehiculo}
+                    nombre={"vehiculo"}
+                    label={"Vehiculo"}
+                    handle={handleChange}
+                />
+                <Input
+                    tipo="text"
+                    label="Seguro"
+                    placeholder=""
+                    nombre="seguro"
+                    handle={handleChange}
+                />
+                <Input
+                    tipo="number"
+                    label="Número de dias de alquiler"
+                    placeholder="3"
+                    nombre="dias"
+                    handle={handleChange}
+                />
+                <Input
+                    tipo="number"
+                    label="Precio por dia"
+                    placeholder="0"
+                    nombre="precio"
+                    handle={handleChange}
+                />
+                <Input
+                    tipo="date"
+                    label={"Fecha alquiler inicio"}
+                    nombre="dateI"
+                    handle={handleChange}
+                />
+                <Input
+                    tipo="date"
+                    label={"Fecha alquiler fin"}
+                    nombre="dateF"
+                    handle={handleChange}
+                />
+                <div>
+                <label htmlFor='finalizado'>Finalizado</label>
+                <input
+                type="radio"
+                value={finalizado[0].value}
+                name='terminado'
+                onChange={handleChange}
+                />{finalizado[0].name}
+                <input
+                type="radio"
+                value={finalizado[1].value}
+                name='terminado'
+                onChange={handleChange}
+                />{finalizado[1].name}
+                </div>
+                <Input
+                    tipo="number"
+                    label={"Valor de Penalizacion (si no aplica 0)"}
+                    nombre="penalizacion"
+                    placeholder={'0'}
+                    handle={handleChange}
+                />
+                <Input
+                    tipo="text"
+                    label={"Observaciones"}
+                    nombre="observaciones"
+                    handle={handleChange}
+                />
             <Input
-                tipo="text"
-                label="Seguro"
-                placeholder=""
-                nombre="seguro"
-                handle={handleChange}
-            />
-            <Input
-                tipo="number"
-                label="Número de dias de alquiler"
-                placeholder="3"
-                nombre="dias"
-                handle={handleChange}
-            />
-            <Input
-                tipo="number"
-                label="Precio por dia"
-                placeholder="0"
-                nombre="precio"
-                handle={handleChange}
-            />
-            <Input
-                tipo="date"
-                label={"Fecha alquiler inicio"}
-                nombre="dateI"
-                handle={handleChange}
-            />
-            <Input
-                tipo="date"
-                label={"Fecha alquiler fin"}
-                nombre="dateF"
-                handle={handleChange}
-            />
-            <div>
-            <label htmlFor='finalizado'>Finalizado</label>
-            <input
-              type="radio"
-              value={finalizado[0].value}
-              name='terminado'
-              onChange={handleChange}
-            />{finalizado[0].name}
-            <input
-              type="radio"
-              value={finalizado[1].value}
-              name='terminado'
-              onChange={handleChange}
-            />{finalizado[1].name}
-            </div>
-            <Input
-                tipo="number"
-                label={"Valor de Penalizacion (si no aplica 0)"}
-                nombre="penalizacion"
-                placeholder={'0'}
-                handle={handleChange}
-            />
-            <Input
-                tipo="text"
-                label={"Observaciones"}
-                nombre="observaciones"
-                handle={handleChange}
-            />
-           <Input
-                tipo="number"
-                label={"Total"}
-                nombre="total"
-                estado={alquiler.dias * alquiler.precio}
-            />
-            <div className='btn_container'>
-                <button className="btn cancel"  onClick={cancel}>Cancelar</button>
-                <button className="btn formulario__btn" type="submit" onClick={setTotal}>Enviar</button>
-            </div>
+                    tipo="number"
+                    label={"Total"}
+                    nombre="total"
+                    estado={alquiler.dias * alquiler.precio}
+                />
+                <div className='btn_container'>
+                    <button className="btn cancel"  onClick={cancel}>Cancelar</button>
+                    <button className="btn formulario__btn" type="submit" onClick={setTotal}>Enviar</button>
+                </div>
 
-            </form>
+                </form>
+            </div>
         </div>
     )
 }

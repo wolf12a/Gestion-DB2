@@ -3,7 +3,7 @@ const rutas = require('./routes/alquiler.routes')
 const cors = require('cors')
 var morgan = require('morgan')
 
- 
+
 const app = express();
 app.use(cors())
 app.use(morgan('dev'))

@@ -1,8 +1,9 @@
 .main {
 	max-width: 800px;
 	width: 90%;
-	margin: 40px auto;
-	padding: 40px;
+	margin: auto;
+	padding: .2em 2em;
+	margin-top: 7em;
 	background:  #ffffffc9;
 	box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.3);
 }
@@ -10,23 +11,31 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	max-width: 1500px;
-	width: 90%;
-	margin:20px auto;
-	padding: 2%;
+	/* max-width: 1500px; */
+	width: 100%;
+	height: 100dvh;
+	background-image: url("https://i.postimg.cc/mg7L1t7Z/image-1.png");
+	background-color: rgba(0,0,0,0.5);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
 }
 .center *{
 	align-self: center;
 }
-h2{
-	font-size: 30px;
-    color: rgba(129, 97, 235, 0.843);
+h1{
+	font-size: 2.3em;
+    color: #fff;
+}
+a{
+	text-decoration: none;
+	color: #fff;
 }
 
 form{
 	display: grid; 
 	grid-template-columns: 1fr 1fr; 
-	gap: 20px;
+	gap: .5em;
 }
 .Input, select{
   width: 85%;
@@ -40,7 +49,6 @@ form{
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -72,11 +80,12 @@ select{
 	text-align: center;
 	transition: .1s ease all;
 }
+
 label{
   display: block;
 	font-weight: 700;
 	padding: 10px;
-	min-height: 40px;
+	min-height: 20px;
 	cursor: pointer;
 }
 .btn_container{
@@ -87,10 +96,18 @@ label{
   justify-content: center;
 }
 
+.nav{
+	position: fixed;
+    top: 0;
+    left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
 .btn{
   height: 45px; 
 	line-height: 45px;
-	width: 40%;
 	color: #fff;
 	border: none;
 	border-radius: 3px;
@@ -98,19 +115,32 @@ label{
 	padding: 0px 1.5em;
 	margin: 1.2em;
 	text-align: center;
-	transition: .1s ease all;
-	font-weight: bold;
 }
+.btn-link{
+	height: 45px; 
+	  line-height: 45px;
+	  /* color: #fff; */
+	  border: none;
+	  border-radius: 3px;
+	  padding: 1em;
+	background: transparent;
+	text-align: center;
+  }
 .formulario__btn {
 	background: #0075FF;
 }
 .btn_home {
 	font-size: 1em;
-	background: #f1945f;
 }
+.btn_home:hover{
+	color: #f1945f;
+}
+
 .btn_no {
 	font-size: 1em;
-	background: #f15f5f;
+}
+.btn_no:hover {
+	color: #f15f5f;
 }
 
 .formulario__btn:hover {
@@ -123,3 +153,31 @@ label{
 .cancel{
 	background: rgb(210, 60, 60);
 }
+
+.info{
+    width: 80%;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+
+}
+.info div{
+    margin: 0 20px;
+
+}
+.info div h2{
+    font-size: 44px;
+    font-weight: 400;
+
+}
+.info .line{
+    flex: 1;
+    background: #fff;
+    height: 4px;
+
+}
+

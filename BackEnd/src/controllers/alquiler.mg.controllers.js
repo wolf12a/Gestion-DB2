@@ -1,6 +1,6 @@
 const res = require('express/lib/response')
 const {MongoClient, ObjectId} = require('mongodb')
-const client = new MongoClient('mongodb://localhost:27017')
+const client = new MongoClient(process.env.MONGO_URI)
 const db = client.db('alquilerVehiculos')
 const vehiculo = db.collection('vehiculo')
 const cliente = db.collection('cliente')
@@ -93,7 +93,10 @@ const TG_impide_alquilar = async(id) =>{
             if(TG_impide_alquilar(cliente)){
                 res.json ({error: 'HA TENIDO DOS ATRASOS EN ALQUILERES ANTERIORES, POR EL MOMENTO NO PUEDE ALQUILAR NINGÚN VEHICULO'});
             }else{
-                alquiler.insertOne({id_vehiculo: ObjectId(vehiculo), id_empleado: ObjectId(empleado), id_cliente: ObjectId(cliente), dias_alquiler: dias, precio_diario: precio, alquiler_terminado: terminado, fecha_inicio: dateI, fecha_fin: dateF, penalizacion, observaciones, seguro, total}, 
+                alquiler.insertOne({id_vehiculo: ObjectId(vehiculo), id_empleado: ObjectId(empleado), 
+                    id_cliente: ObjectId(cliente), dias_alquiler: dias, precio_diario: precio, 
+                    alquiler_terminado: terminado, fecha_inicio: dateI, fecha_fin: dateF, penalizacion, 
+                    observaciones, seguro, total}, 
                 (error, datos)=>{
                     if(datos){
                         res.json({status: 'ok'})
